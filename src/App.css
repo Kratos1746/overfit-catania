@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Noto+Sans&family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* Aggiungi questo stile al tuo file CSS o App.js */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@keyframes App-logo-spin {
+
+
+@keyframes appearFromLeft {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-100%);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0);
   }
 }
+
+/* Add media query to handle screen size */
+@media (max-width: 1023px) {
+  .logo-appear {
+    animation: appearFromTop 1.5s ease;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-appear {
+    animation: appearFromLeft 1.5s ease;
+  }
+}
+
+
+
+
