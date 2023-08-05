@@ -11,10 +11,10 @@ module.exports = {
   keyframes: {
     'bounce-horizontal': {
       '0%, 100%': {
-        transform: 'translateX(-20px)',
+        transform: 'translateX(0px)',
       },
       '50%': {
-        transform: 'translateX(20px)',
+        transform: 'translateX(30px)',
       },
     },
 
@@ -23,7 +23,7 @@ module.exports = {
         transform: 'translateX(0px)',
       },
       '50%': {
-        transform: 'translateX(-20px)',
+        transform: 'translateX(-30px)',
       },
     },
 
@@ -74,7 +74,10 @@ module.exports = {
 
       fontFamily:{
         body:['Montserrat']
-      }
+      },
+      backgroundImage: {
+        'back': "url('/public/images/back.JPEG')",
+      },
       
     },
   },

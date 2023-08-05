@@ -4,7 +4,6 @@ import './App.css'
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
 
@@ -42,71 +41,71 @@ class Section1 extends React.Component {
   render() {
 
     return (
-      <div
-        id="section1"
-        className="grid grid-rows-3 w-[90%] px-8 md:px-12 h-screen m-auto xl:max-w-none bg-right max-[1024px]:min-h-[1200px] z-[0]"
-        style={{
-          backgroundImage: `url('/images/back.jpg')`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-          width: '100%',
-        }}
-      >
      
+<div id="section1" className="bg-back bg-no-repeat bg-center bg-cover bg-s flex flex-col items-center w-[100%] px-12 h-screen  lg:justify-start lg:items-start  flex-1">     
+  <div className="flex justify-center items-center lg:justify-start z-1 w-full">
+    <img
+    src="/images/logob.png"
+    alt="Immagine 1"
+    className="w-2/3 lg:w-1/3 mt-12 animate-dasopra"
+    />
+    </div>
 
-        <div
-          className="flex justify-center items-center lg:justify-start z-10  ">
-          <img src="/images/logob.png" alt="Logo" className="w-2/3 lg:w-1/3 mt-12 animate-dasopra" />
-        </div>
-        <div className="flex flex-col justify-start items-left z-10 ">
-        <div className="flex mb-8 items-center justify-center  lg:absolute lg:rotate-90 lg:right-[-5%] xl:right-[-3.5%] 2xl:right-[-3%] lg:top-[15%] lg:mr-0 lg:bg-black lg:bg-opacity-50 lg:p-8 lg:border-t-4 border-red-700  ">
+    <div className='flex flex-col lg:justify-start mt-20'>
+         <h2 className="text-white text-center lg:text-left text-2xl leading-tight md:text-[40px] lg:text-[40px] 2xl:text-[52px] font-bold uppercase  animate-dasopra delay-100">{this.props.title}<span className='text-red-700'>benessere</span></h2>
+          <p className="text-white text-center lg:text-left text-xs md:text-base lg:text-xl 2xl:text-2xl mt-4 uppercase  lg:max-w-[700px] animate-appari">{this.props.subtitle} e sempre affiancato da un trainer</p>
+        
+   </div>
+   <div className="flex mt-10 lg:mb-8 items-center justify-center shadow-lg shadow-black px-3 lg:absolute lg:rotate-90 lg:right-[-5%] xl:right-[-3.5%] 2xl:right-[-3%] lg:top-[5%] lg:mr-0 lg:bg-black lg:bg-opacity-50 lg:p-8 lg:border-t-4 border-red-700 z-20  ">
               <a href="https://www.facebook.com/overfitcentrofitness/" className="text-white mr-4   ">
-              <img src="/images/lface.png" alt="Immagine" className="w-[33px] md:w-[40px] lg:w-[45px] hover:scale-125 ease-in duration-150 lg:-rotate-90 " />
+              <img src="/images/lface.png" alt="Immagine" className="w-[33px] md:w-[40px] lg:w-[45px] hover:scale-125 ease-in duration-150 lg:-rotate-90  " />
               </a>
-              <a href="https://www.instagram.com/over.fit_/" className="text-white mr-4">
+              <a href="https://www.instagram.com/over.fit_/" className="text-white mr-4 lg:border-x-2">
               <img src="/images/instagram.png" alt="Immagine" className=" w-[55px] md:w-[70px]  lg:w-[80px] hover:scale-125 ease-in duration-150 lg:-rotate-90 " />
               </a>
               <a href="https://www.tiktok.com/@overfitcatania" className="text-white">
               <img src="/images/tiktok.png" alt="Immagine" className="w-[30px] md:w-9 lg:w-[44px] hover:scale-125 ease-in duration-150 lg:-rotate-90  " />
               </a>
             </div>
-          <h2 className="text-white text-center lg:text-left text-2xl leading-tight md:text-[40px] lg:text-[40px] 2xl:text-[52px] font-bold uppercase  animate-dasopra delay-100">{this.props.title}<span className='text-red-700'>benessere</span></h2>
-          <p className="text-white text-center lg:text-left text-xs md:text-base lg:text-xl 2xl:text-2xl mt-4 uppercase  lg:max-w-[700px] animate-appari">{this.props.subtitle} e sempre affiancato da un trainer</p>
-        </div>
-        <img src="/images/BAN.png" alt="Immagine 1" className="w-full min-[500px]:top-[50%] min-[600px]:top-[45%] sm:top-[50%] md:w-[80%] md:top-[60%] min-[860px]:top-[55%] min-[950px]:top-[45%] lg:w-[650px] lg:top-[60%] xl:w-[700px] 2xl:w-[900px] absolute left-[-.2%] top-[60%] z-10  animate-dasinistra " />
-        
-        <div className="flex mt-28 sm:mt-48 justify-center lg:justify-start  z-10 animate-appari">
-        <div className="h-[8%] absolute max-[375px]:bottom-[8%] max-[375px]:left-[8%] max-[450px]:bottom-[8%]  max-[500px]:bottom-[14%] max-[550px]:bottom-[18%] max-[600px]:bottom-[20%] max-[641px]:bottom-[23%] max-[450px]:left-[9%]  max-[500px]:left-[16%] max-[550px]:left-[18%] left-[23%] max-[700px]:bottom-[4%] max-[700px]:left-[22%] max-[768px]:bottom-[8%] max-[850px]:bottom-[10%] max-[920px]:bottom-[12%] max-[1024px]:bottom-[15%] min-[768px]:left-[10%] min-[820px]:left-[13%] min-[900px]:left-[15%] min-[1000px]:left-[17%] min-[1024px]:bottom-[1%]   min-[1024px]:left-[2%]  min-[1340px]:left-[1%]  min-[1450px]:left-[1%] min-[1400px]:bottom-[2%]  min-[1600px]:bottom-[4%]  border border-red-700 border-t-2 border-l-2 "></div>
-        <div className="w-[16%] absolute max-[375px]:bottom-[8%] max-[375px]:left-[8%] max-[450px]:bottom-[8%]   max-[500px]:bottom-[14%] max-[550px]:bottom-[18%] max-[600px]:bottom-[20%] max-[641px]:bottom-[23%] max-[450px]:left-[9%]  max-[500px]:left-[16%] max-[550px]:left-[18%] left-[23%] max-[700px]:bottom-[4%] max-[700px]:left-[22%] max-[768px]:bottom-[8%] max-[850px]:bottom-[10%] max-[920px]:bottom-[12%] max-[1024px]:bottom-[15%] min-[768px]:left-[10%] min-[820px]:left-[13%] min-[900px]:left-[15%] min-[1000px]:left-[17%] min-[1024px]:bottom-[1%]    min-[1024px]:left-[2%]  min-[1340px]:left-[1%] min-[1450px]:left-[1%] min-[1400px]:bottom-[2%] min-[1600px]:bottom-[4%]  border border-red-700 border-b-2 border-l-2 "></div>
-        <div className="h-[8%] absolute max-[375px]:bottom-[8%] max-[375px]:left-[50%]  max-[450px]:bottom-[8%]   max-[500px]:bottom-[14%] max-[550px]:bottom-[18%] max-[600px]:bottom-[20%] max-[641px]:bottom-[23%] max-[450px]:left-[50%]  max-[500px]:left-[50%] max-[550px]:left-[50%] left-[50%] max-[700px]:bottom-[4%] max-[700px]:left-[50%] max-[768px]:bottom-[8%] max-[850px]:bottom-[10%] max-[920px]:bottom-[12%] max-[1024px]:bottom-[15%] min-[768px]:left-[50%] min-[820px]:left-[50%] min-[900px]:left-[50%] min-[1000px]:left-[50%] min-[1024px]:bottom-[1%]    min-[1024px]:left-[35%] min-[1145px]:left-[30%] min-[1340px]:left-[28%] min-[1450px]:left-[23%]   min-[1600px]:left-[20%] min-[1400px]:bottom-[2%] min-[1600px]:bottom-[4%] border border-gray-600 border-t-2 border-l-2 "></div>
-        <div className="w-[16%] absolute  max-[375px]:bottom-[8%] max-[375px]:left-[50%] max-[450px]:bottom-[8%]   max-[500px]:bottom-[14%] max-[550px]:bottom-[18%] max-[600px]:bottom-[20%] max-[641px]:bottom-[23%] max-[450px]:left-[50%]  max-[500px]:left-[50%] max-[550px]:left-[50%] left-[50%] max-[700px]:bottom-[4%] max-[700px]:left-[50%] max-[768px]:bottom-[8%] max-[850px]:bottom-[10%] max-[920px]:bottom-[12%] max-[1024px]:bottom-[15%] min-[768px]:left-[50%] min-[820px]:left-[50%] min-[900px]:left-[50%] min-[1000px]:left-[50%] min-[1024px]:bottom-[1%]   min-[1024px]:left-[35%] min-[1145px]:left-[30%] min-[1340px]:left-[28%] min-[1450px]:left-[23%]  min-[1600px]:left-[20%] min-[1400px]:bottom-[2%] min-[1600px]:bottom-[4%]   border border-gray-600 border-b-2 border-l-2 "></div>
-    
-        
-          <button className="bg-white hover:bg-red-700 hover:text-white hover:scale-105 ease-out duration-150 text-gray-600 font-bold text-sm px-5 max-w-[135px] h-[70px] md:whitespace-nowrap w-72 border-2 border-red-700 md:max-w-[260px] md:text-base lg:text-lg lg:max-w-xs" onClick={this.openGoogleMaps}>
+
+            <div className='flex flex-col justify-left items-left relative left-[-.2%] xl:left-0  w-screen  mt-20 lg:max-w-[700px] lg:ml-[-48px] xl:max-w-[850px] 2xl:max-w-[900px] '>
+        <img src="/images/BAN.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[850px] lg:top-[55%] xl:w-[1000px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
+</div>
+       
+        <div className="flex mt-12 justify-center lg:justify-start relative mb-20 z-10">
+  <div className="h-[100%] absolute bottom-[-25%] left-[51%] sm:left-[55%] md:left-[52%] border border-gray-600 border-t-2 border-l-2"></div>
+  <div className="w-[33%] absolute bottom-[-25%] left-[-3%]  border border-red-700 border-b-2 border-l-2"></div>
+  <div className="h-[100%] absolute bottom-[-25%] right-[103%]  border border-red-700 border-t-2 border-r-2"></div>
+  <div className="w-[33%] absolute  bottom-[-25%] left-[51%] sm:left-[55%] md:left-[52%]  border border-gray-600 border-b-2 border-r-2"></div>
+
+  <button className="bg-white hover:bg-red-700 hover:text-white hover:scale-105 ease-out duration-150 text-gray-600 font-bold text-sm px-5 max-w-[135px] h-[70px] md:whitespace-nowrap w-72 border-2 border-red-700 md:max-w-[260px] md:text-base lg:text-lg lg:max-w-[280px] xl:max-w-sm" onClick={this.openGoogleMaps}>
             INDICAZIONI STRADALI
           
           </button> 
          
-          <button className="bg-white text-red-700 hover:bg-gray-700 hover:text-white hover:scale-105 ease-out duration-150 font-bold text-sm px-5 ml-6 sm:ml-16 max-w-[135px] h-[70px] md:whitespace-nowrap w-72 border-2 border-gray-800 md:max-w-[260px] md:text-base lg:text-lg lg:max-w-xs" onClick={this.callNow}>
+          <button className="bg-white text-red-700 hover:bg-gray-700 hover:text-white hover:scale-105 ease-out duration-150 font-bold text-sm px-5 ml-6 sm:ml-16 max-w-[135px] h-[70px] md:whitespace-nowrap w-72 border-2 border-gray-800 md:max-w-[260px] md:text-base lg:text-lg lg:max-w-[280px] xl:max-w-sm" onClick={this.callNow}>
             CHIAMA ORA
            
           </button>
         </div>
+
         <a href="https://api.whatsapp.com/send?phone=3737477594&text=" target="_blank">
   <button class="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 fixed bottom-10 right-6 z-30 hover:scale-125 ease-in duration-150 ">
     <img src="/images/124034.png" alt="WhatsApp Icon" class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-md border-2 border-white shadow-md shadow-black"/>
   </button>
 </a>
-        <img src="/images/persone2.png" alt="Persone 2" className=" max-h-[698px] max-w-[794px] lg:w-2/4 w-full sm:w-2/3 relative lg:absolute bottom-0 2xl:bottom-[0px] sm:left-[15%] lg:left-[50%] z-0 " />
-        
-        </div>
-      
+
+        <div className="flex justify-start items-center max-[600px]:min-w-[300px] max-w-lg  w-full relative lg:left-[50%] xl:max-w-[600px] 2xl:max-w-[700px] 2xl:left-[55%]  z-1">
+  <img
+    src="/images/persone2.png"
+    alt="Immagine 1"
+    className="w-full mt-12 animate-dasinistra relative lg:absolute bottom-0 "
+  />
+</div>
+      </div>
     );
   }
 }
-
-
 
 
 
@@ -122,15 +121,15 @@ class Section3 extends React.Component {
             Che tu voglia <span className='text-red-700 font-semibold'>liberare</span> la tua mente.<br />
             Che tu voglia <span className='text-red-700 font-semibold'>raggiungere</span> il tuo fisico ideale, Over Fit è il luogo ideale per te.
           </h2>
-          <p className="text-black text-center md:text-start md:text-xl lg:text-2xl mt-8 mb-11">{this.props.subtitle}</p>
+          <p className="text-black text-center md:text-start md:text-lg lg:text-xl xl:text-2xl mt-12 mb-11">{this.props.subtitle}</p>
         </div>
-        <div className="flex justify-center items-center md:ml-10 relative max-h-[1000px] z-10">
-          <div className="bg-gray-600 bg-opacity-30 h-2/3 p-4 z-10">
-            <div className="h-[8%] absolute bottom-[13%] left-[8%] md:bottom-[14%] md:left-[-3%] lg:left-[10%] 2xl:bottom-[14%] 2xl:left-[14%] border border-red-700 border-t-2 border-l-2 animate-bounce-horizontal-reverse"></div>
-            <div className="w-[8%] absolute top-[13%] right-[8%] md:top-[14%] md:right-[-3%] lg:right-[10%] 2xl:top-[14%] 2xl:right-[14%] border border-red-700 border-t-2 border-r-2 animate-bounce-horizontal"></div>
-            <div className="w-[8%] absolute bottom-[13%] left-[8%] md:bottom-[14%] md:left-[-3%] lg:left-[10%] 2xl:bottom-[14%] 2xl:left-[14%] border border-red-700 border-b-2 border-l-2 animate-bounce-horizontal-reverse"></div>
-            <div className="h-[8%] absolute top-[13%] right-[8%] md:top-[14%] md:right-[-3%] lg:right-[10%] 2xl:top-[14%] 2xl:right-[14%] border border-red-700 border-b-2 border-r-2 animate-bounce-horizontal"></div>
-            <video className="w-full h-full" controls poster='/images/copertina.png'>
+        <div className="flex justify-center items-center md:ml-10 relative max-h-[500px]  sm:max-h-[600px] md:max-h-[700px] lg:max-h-[800px] xl:max-h-[1000px] z-10">
+          <div className="bg-gray-600 bg-opacity-30 h-2/3 p-4 z-10 relative">
+            <div className="h-[8%] absolute -bottom-[4%] -left-[3%] border border-red-700 border-t-2 border-l-2 animate-bounce-horizontal-reverse"></div>
+            <div className="w-[8%] absolute -top-[4%] -right-[3%]  border border-red-700 border-t-2 border-r-2 animate-bounce-horizontal"></div>
+            <div className="w-[8%] absolute -bottom-[4%] -left-[3%] border border-red-700 border-b-2 border-l-2 animate-bounce-horizontal-reverse"></div>
+            <div className="h-[8%] absolute -top-[4%] -right-[3%] border border-red-700 border-b-2 border-r-2 animate-bounce-horizontal"></div>
+            <video className="w-full h-full " controls poster='/images/copertina.PNG'>
               <source src="/video/video edit.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
@@ -287,28 +286,28 @@ Per questo motivo abbiamo pensato alla promozione<br></br>
           
           >
              <div className='flex flex-row justify-center items-center mt-16 mb-16'>
-              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls>
+              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant1.PNG' >
                 <source src="/video/rec1.mp4" type="video/mp4" />
                 {/* Fallback message for non-supporting browsers */}
                 Il tuo browser non supporta il video.
               </video>
             </div>
             <div className='flex flex-row justify-center items-center mt-16 mb-16'>
-              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls>
+              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant2.PNG'>
                 <source src="/video/rec2.mp4" type="video/mp4" />
                 {/* Fallback message for non-supporting browsers */}
                 Il tuo browser non supporta il video.
               </video>
             </div>
             <div className='flex flex-row justify-center items-center mt-16 mb-16'>
-              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls>
-                <source src="/video/rec3.mp4" type="video/mp4" />
+              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant3.PNG'>
+                <source src="/video/rec3.mp4" type="video/mp4"/>
                 {/* Fallback message for non-supporting browsers */}
                 Il tuo browser non supporta il video.
               </video>
             </div>
             <div className='flex flex-row justify-center items-center mt-16 mb-16'>
-              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls>
+              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls  poster='/images/ant4.PNG'>
                 <source src="/video/rec4.mp4" type="video/mp4" />
                 {/* Fallback message for non-supporting browsers */}
                 Il tuo browser non supporta il video.
@@ -317,22 +316,22 @@ Per questo motivo abbiamo pensato alla promozione<br></br>
           </Carousel>
         ) : (
           <div className="flex flex-row justify-center items-center mt-16 mb-16">
-            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700  " controls>
+            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700  " controls poster='/images/ant1.PNG'>
               <source src="/video/rec1.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
             </video>
-            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls>
+            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant2.PNG'>
               <source src="/video/rec2.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
             </video>
-            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls>
+            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant3.PNG'>
               <source src="/video/rec3.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
             </video>
-            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls>
+            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant4.PNG'>
               <source src="/video/rec4.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
