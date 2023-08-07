@@ -12,12 +12,29 @@ import 'react-phone-number-input/style.css';
 class Section1 extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       phoneNumber: '3737477594', // Stato per il numero di telefono
+      screenHeight: window.innerHeight, // Aggiungiamo il valore iniziale dell'altezza dello schermo allo stato
     };
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
     this.callNow = this.callNow.bind(this);
   }
+
+  componentDidMount() {
+    // Aggiungiamo un ascoltatore per l'evento resize per gestire eventuali cambiamenti di dimensione della finestra
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    // Rimuoviamo l'ascoltatore dell'evento resize prima di smontare il componente
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = () => {
+    // Aggiorniamo l'altezza dello schermo nello stato quando viene ridimensionata la finestra
+    this.setState({ screenHeight: window.innerHeight });
+  };
 
   handlePhoneChange(value) {
     this.setState({
@@ -37,42 +54,46 @@ class Section1 extends React.Component {
     const encodedDestination = encodeURIComponent(destination);
     window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedDestination}`, '_blank');
   }
+  
 
   render() {
-
+    const { screenHeight } = this.state;
+    const sectionStyle = {
+      height: screenHeight,};
     return (
      
-<div id="section1" className="bg-back bg-no-repeat bg-center bg-cover bg-s flex flex-col items-center w-[100%] px-12 h-screen  lg:justify-start lg:items-start  flex-1">     
-  <div className="flex justify-center items-center lg:justify-start z-1 w-full">
+<div id="section1" className="bg-back bg-no-repeat bg-center bg-cover md:bg-fixed flex flex-col items-center w-[100%] px-12 min-h-screen  xl:h-screen xl:justify-start xl:items-start  ">
+    
+  <div className="flex justify-center items-center xl:justify-start z-1 w-full">
     <img
     src="/images/logob.png"
     alt="Immagine 1"
-    className="w-2/3 lg:w-1/3 mt-12 animate-dasopra"
+    className="w-2/3 xl:w-1/3 mt-12 animate-dasopra"
     />
     </div>
 
-    <div className='flex flex-col lg:justify-start mt-20'>
-         <h2 className="text-white text-center lg:text-left text-2xl leading-tight md:text-[40px] lg:text-[40px] 2xl:text-[52px] font-bold uppercase  animate-dasopra delay-100">{this.props.title}<span className='text-red-700'>benessere</span></h2>
-          <p className="text-white text-center lg:text-left text-xs md:text-base lg:text-xl 2xl:text-2xl mt-4 uppercase  lg:max-w-[700px] animate-appari">{this.props.subtitle} e sempre affiancato da un trainer</p>
+    <div className='flex flex-col xl:justify-start mt-20'>
+         <h2 className="text-white text-center xl:text-left text-2xl leading-tight md:text-[40px] lg:text-[40px] 2xl:text-[52px] font-bold uppercase  animate-dasopra delay-100 z-10">{this.props.title}<span className='text-red-700'>benessere</span></h2>
+          <p className="text-white text-center xl:text-left text-xs md:text-base lg:text-xl 2xl:text-2xl mt-4 uppercase  lg:max-w-[700px] animate-appar z-10">{this.props.subtitle} e sempre affiancato da un trainer</p>
         
    </div>
-   <div className="flex mt-10 lg:mb-8 items-center justify-center shadow-lg shadow-black px-3 lg:absolute lg:rotate-90 lg:right-[-5%] xl:right-[-3.5%] 2xl:right-[-3%] lg:top-[5%] lg:mr-0 lg:bg-black lg:bg-opacity-50 lg:p-8 lg:border-t-4 border-red-700 z-20  ">
-              <a href="https://www.facebook.com/overfitcentrofitness/" className="text-white mr-4   ">
-              <img src="/images/lface.png" alt="Immagine" className="w-[33px] md:w-[40px] lg:w-[45px] hover:scale-125 ease-in duration-150 lg:-rotate-90  " />
+   <div className="flex mt-10 lg:mb-8 items-center justify-center border-b-2 border-white shadow-xl shadow-black px-3 xl:absolute xl:rotate-90 xl:right-[-3.5%] 2xl:right-[-3%] xl:top-[5%] xl:mr-0 bg-black bg-opacity-30 xl:bg-opacity-50 xl:p-8 xl:border-t-4 xl:border-b-0 xl:border-red-700 z-20  ">
+              <a href="https://www.facebook.com/overfitcentrofitness/" target="_blank" className="text-white mr-4   ">
+              <img src="/images/lface.png" alt="Immagine" className="w-[33px] md:w-[40px] lg:w-[45px] hover:scale-125 ease-in duration-150 xl:-rotate-90  " />
               </a>
-              <a href="https://www.instagram.com/over.fit_/" className="text-white mr-4 lg:border-x-2">
-              <img src="/images/instagram.png" alt="Immagine" className=" w-[55px] md:w-[70px]  lg:w-[80px] hover:scale-125 ease-in duration-150 lg:-rotate-90 " />
+              <a href="https://www.instagram.com/over.fit_/" target="_blank" className="text-white mr-4 xl:border-x-2">
+              <img src="/images/instagram.png" alt="Immagine" className=" w-[55px] md:w-[70px]  lg:w-[80px] hover:scale-125 ease-in duration-150 xl:-rotate-90 " />
               </a>
-              <a href="https://www.tiktok.com/@overfitcatania" className="text-white">
-              <img src="/images/tiktok.png" alt="Immagine" className="w-[30px] md:w-9 lg:w-[44px] hover:scale-125 ease-in duration-150 lg:-rotate-90  " />
+              <a href="https://www.tiktok.com/@overfitcatania" target="_blank" className="text-white">
+              <img src="/images/tiktok.png" alt="Immagine" className="w-[30px] md:w-9 lg:w-[44px] hover:scale-125 ease-in duration-150 xl:-rotate-90  " />
               </a>
             </div>
 
-            <div className='flex flex-col justify-left items-left relative left-[-.2%] xl:left-0  w-screen  mt-20 lg:max-w-[700px] lg:ml-[-48px] xl:max-w-[850px] 2xl:max-w-[900px] '>
-        <img src="/images/BAN.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[850px] lg:top-[55%] xl:w-[1000px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
+            <div className='flex flex-col justify-left items-left relative left-[-.2%] xl:left-0  w-screen  mt-8  xl:ml-[-48px] xl:max-w-[850px] 2xl:max-w-[900px] 2xl:mt-20 '>
+        <img src="/images/BAN.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[750px] lg:top-[50%] xl:w-[750px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
 </div>
        
-        <div className="flex mt-12 justify-center lg:justify-start relative mb-20 z-10">
+        <div className="flex mt-12  justify-center lg:justify-start relative mb-20 z-10">
   <div className="h-[100%] absolute bottom-[-25%] left-[51%] sm:left-[55%] md:left-[52%] border border-gray-600 border-t-2 border-l-2"></div>
   <div className="w-[33%] absolute bottom-[-25%] left-[-3%]  border border-red-700 border-b-2 border-l-2"></div>
   <div className="h-[100%] absolute bottom-[-25%] right-[103%]  border border-red-700 border-t-2 border-r-2"></div>
@@ -95,13 +116,13 @@ class Section1 extends React.Component {
   </button>
 </a>
 
-        <div className="flex justify-start items-center max-[600px]:min-w-[300px] max-w-lg  w-full relative lg:left-[50%] xl:max-w-[600px] 2xl:max-w-[700px] 2xl:left-[55%]  z-1">
-  <img
-    src="/images/persone2.png"
-    alt="Immagine 1"
-    className="w-full mt-12 animate-dasinistra relative lg:absolute bottom-0 "
-  />
-</div>
+<div className="flex justify-start items-center max-[600px]:min-w-[300px] max-w-lg w-full relative xl:absolute bottom-0 xl:left-[50%] xl:max-w-[550px] 2xl:max-w-[600px]  2xl:left-[55%] "> {/* Utilizziamo una nuova struttura HTML con un wrapper div */}
+          <img
+            src="/images/persone2.png"
+            alt="Immagine 1"
+            className="w-full  animate-dasinistra" // Rimuoviamo la classe "relative" e il "mt-12"
+          />
+        </div>
       </div>
     );
   }
@@ -124,12 +145,12 @@ class Section3 extends React.Component {
           <p className="text-black text-center md:text-start md:text-lg lg:text-xl xl:text-2xl mt-12 mb-11">{this.props.subtitle}</p>
         </div>
         <div className="flex justify-center items-center md:ml-10 relative max-h-[500px]  sm:max-h-[600px] md:max-h-[700px] lg:max-h-[800px] xl:max-h-[1000px] z-10">
-          <div className="bg-gray-600 bg-opacity-30 h-2/3 p-4 z-10 relative">
-            <div className="h-[8%] absolute -bottom-[4%] -left-[3%] border border-red-700 border-t-2 border-l-2 animate-bounce-horizontal-reverse"></div>
-            <div className="w-[8%] absolute -top-[4%] -right-[3%]  border border-red-700 border-t-2 border-r-2 animate-bounce-horizontal"></div>
-            <div className="w-[8%] absolute -bottom-[4%] -left-[3%] border border-red-700 border-b-2 border-l-2 animate-bounce-horizontal-reverse"></div>
-            <div className="h-[8%] absolute -top-[4%] -right-[3%] border border-red-700 border-b-2 border-r-2 animate-bounce-horizontal"></div>
-            <video className="w-full h-full " controls poster='/images/copertina.PNG'>
+          <div className="  md:ml-3 z-10 relative mb-10">
+            <div className="h-[8%] absolute -bottom-[0%] -left-[0%] border border-red-700 border-t-2 border-l-2 animate-bounce-horizontal-reverse"></div>
+            <div className="w-[8%] absolute -top-[0%] -right-[0%]  border border-red-700 border-t-2 border-r-2 animate-bounce-horizontal"></div>
+            <div className="w-[8%] absolute -bottom-[0%] -left-[0%] border border-red-700 border-b-2 border-l-2 animate-bounce-horizontal-reverse"></div>
+            <div className="h-[8%] absolute -top-[0%] -right-[0%] border border-red-700 border-b-2 border-r-2 animate-bounce-horizontal"></div>
+            <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black  " controls poster='/images/copertina.PNG'>
               <source src="/video/video edit.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
@@ -230,7 +251,7 @@ class Section5 extends React.Component {
     return (
       <div
         id="section5"
-        className="flex flex-col items-center w-[90%] px-12 md:h-screen border-y border-black m-auto flex-1"
+        className="flex flex-col items-center w-[90%] px-12 md:h-screen m-auto flex-1"
       >
         <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold mt-24 uppercase animate-dasopra">
           {this.props.title}
@@ -286,28 +307,28 @@ Per questo motivo abbiamo pensato alla promozione<br></br>
           
           >
              <div className='flex flex-row justify-center items-center mt-16 mb-16'>
-              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant1.PNG' >
+              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black " controls poster='/images/ant1.PNG' >
                 <source src="/video/rec1.mp4" type="video/mp4" />
                 {/* Fallback message for non-supporting browsers */}
                 Il tuo browser non supporta il video.
               </video>
             </div>
             <div className='flex flex-row justify-center items-center mt-16 mb-16'>
-              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant2.PNG'>
+              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black" controls poster='/images/ant2.PNG'>
                 <source src="/video/rec2.mp4" type="video/mp4" />
                 {/* Fallback message for non-supporting browsers */}
                 Il tuo browser non supporta il video.
               </video>
             </div>
             <div className='flex flex-row justify-center items-center mt-16 mb-16'>
-              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant3.PNG'>
+              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black " controls poster='/images/ant3.PNG'>
                 <source src="/video/rec3.mp4" type="video/mp4"/>
                 {/* Fallback message for non-supporting browsers */}
                 Il tuo browser non supporta il video.
               </video>
             </div>
             <div className='flex flex-row justify-center items-center mt-16 mb-16'>
-              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls  poster='/images/ant4.PNG'>
+              <video className="max-[375px]:w-[150px] w-[175px] sm:w-[280px] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black " controls  poster='/images/ant4.PNG'>
                 <source src="/video/rec4.mp4" type="video/mp4" />
                 {/* Fallback message for non-supporting browsers */}
                 Il tuo browser non supporta il video.
@@ -316,22 +337,22 @@ Per questo motivo abbiamo pensato alla promozione<br></br>
           </Carousel>
         ) : (
           <div className="flex flex-row justify-center items-center mt-16 mb-16">
-            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700  " controls poster='/images/ant1.PNG'>
+            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black  " controls poster='/images/ant1.PNG'>
               <source src="/video/rec1.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
             </video>
-            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant2.PNG'>
+            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black " controls poster='/images/ant2.PNG'>
               <source src="/video/rec2.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
             </video>
-            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant3.PNG'>
+            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black " controls poster='/images/ant3.PNG'>
               <source src="/video/rec3.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
             </video>
-            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black shadow-xl shadow-gray-700 " controls poster='/images/ant4.PNG'>
+            <video className="w-1/4 xl:w-[22%] h-auto m-3 border-[5px] border-black border-opacity-80 shadow-xl shadow-black " controls poster='/images/ant4.PNG'>
               <source src="/video/rec4.mp4" type="video/mp4" />
               {/* Fallback message for non-supporting browsers */}
               Il tuo browser non supporta il video.
@@ -349,17 +370,9 @@ Per questo motivo abbiamo pensato alla promozione<br></br>
 class Section6 extends React.Component {
   render() {
     return (
-      <div id="section6" className="flex flex-col items-center w-[90%] px-12 md:h-screen min-h-[600px] justify-center  border-y border-black m-auto flex-1 bg-right"
-      style={{
-        backgroundImage: `url('/images/sfondo ros.jpg')`,
-        backgroundSize: "cover", 
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-        width: '100%',
-        
-      }}>
-        <h2 className=" text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl text-center font-bold mt-24 uppercase animate-dasopra">{this.props.title}</h2>
-        <p className="text-white font-medium text-base lg:text-lg xl:text-xl mt-20 mb-14">
+      <div id="section6" className="flex flex-col items-center w-[100%] px-12 md:h-screen min-h-[600px] justify-center   border-black m-auto flex-1 bg-ros bg-no-repeat bg-right bg-cover md:bg-fixed">
+        <h2 className=" text-white text-xl md:text-2xl lg:text-4xl xl:text-5xl text-center font-bold mt-24 uppercase w-[90%] animate-dasopra">{this.props.title}</h2>
+        <p className="text-white font-medium text-base lg:text-lg xl:text-xl mt-20 mb-14 w-[80%] ">
         
         Ho sempre dedicato tutta la mia vita al mondo della palestra. Tanto da rendere la mia passione nel mio lavoro.<br></br><br></br>
 
@@ -455,15 +468,7 @@ class Section7 extends React.Component {
 class Section8 extends React.Component {
   render() {
     return (
-      <div id="section8" className="flex flex-col justify-center items-center w-full max-h-[400px]  flex-1 bg-left z-30"
-      style={{
-        backgroundImage: `url('/images/sfondo.png')`,
-        backgroundSize: "cover", 
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-        width: '100%',
-        
-      }}>
+      <div id="section8" className="flex flex-col justify-center items-center w-full max-h-[400px] flex-1 bg-left z-30 bg-footer bg-no-repeat bg-cover md:bg-fixed">
         <div className="flex flex-row justify-center items-center w-full max-h-[350px] ">
           {/* Colonna sinistra */}
           <div className="flex flex-col items-left pl-4">
@@ -475,14 +480,14 @@ class Section8 extends React.Component {
           {/* Colonna centrale */}
           <div className="flex flex-col items-center p-12 lg:pl-0 sm:m-16 lg:m-40">
             <img src="/images/logob.png" alt="Immagine" className="w-[150px] lg:w-[250px] items-start " />
-            <div className="flex mt-4 items-center">
-              <a href="https://www.facebook.com/overfitcentrofitness/" className="text-white mr-4 ">
+            <div className="flex mt-4 items-center pb-3 px-3  border-b-2 border-white">
+              <a href="https://www.facebook.com/overfitcentrofitness/" target="_blank" className="text-white mr-4 ">
               <img src="/images/lface.png" alt="Immagine" className="w-[33px] md:w-[40px] lg:w-[45px] hover:scale-125 ease-in duration-150 " />
               </a>
-              <a href="https://www.instagram.com/over.fit_/" className="text-white mr-4">
+              <a href="https://www.instagram.com/over.fit_/" target="_blank" className="text-white mr-4">
               <img src="/images/instagram.png" alt="Immagine" className=" w-[55px] md:w-[70px] lg:w-[80px] hover:scale-125 ease-in duration-150  " />
               </a>
-              <a href="https://www.tiktok.com/@overfitcatania" className="text-white">
+              <a href="https://www.tiktok.com/@overfitcatania" target="_blank" className="text-white">
               <img src="/images/tiktok.png" alt="Immagine" className="w-[30px] md:w-9 lg:w-[44px] hover:scale-125 ease-in duration-150  " />
               </a>
             </div>
