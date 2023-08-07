@@ -78,7 +78,7 @@ module.exports = {
       backgroundImage: {
         'back': "url('/public/images/back.JPEG')",
         'ros': "url('/public/images/sfondo ros.JPEG')",
-        'footer': "url('/public/images/sfondo.PNG')",
+        'footer': "url('/public/images/sfondo.png')",
       },
       
     },
