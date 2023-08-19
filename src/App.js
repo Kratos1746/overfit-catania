@@ -62,7 +62,7 @@ class Section1 extends React.Component {
       height: screenHeight,};
     return (
      
-<div id="section1" className="bg-back bg-no-repeat bg-center bg-cover md:bg-fixed flex flex-col items-center w-[100%] px-12 min-h-screen  xl:h-screen xl:justify-start xl:items-start  ">
+<div id="section1" className=" overflow-hidden bg-back bg-no-repeat bg-center bg-cover xl:bg-backxl 2xl:bg-back2xl flex flex-col items-center w-[100%] px-12 min-h-[700px] xl:min-h-[850px]  xl:h-screen xl:justify-start xl:items-start  ">
     
   <div className="flex justify-center items-center xl:justify-start z-1 w-full">
     <img
@@ -93,7 +93,7 @@ class Section1 extends React.Component {
         <img src="/images/BAN.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[750px] lg:top-[50%] xl:w-[750px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
 </div>
        
-        <div className="flex mt-12  justify-center lg:justify-start relative mb-20 z-10">
+        <div className="flex  mt-12 justify-center lg:justify-start relative mb-20 z-10">
   <div className="h-[100%] absolute bottom-[-25%] left-[51%] sm:left-[55%] md:left-[52%] border border-gray-600 border-t-2 border-l-2"></div>
   <div className="w-[33%] absolute bottom-[-25%] left-[-3%]  border border-red-700 border-b-2 border-l-2"></div>
   <div className="h-[100%] absolute bottom-[-25%] right-[103%]  border border-red-700 border-t-2 border-r-2"></div>
@@ -108,6 +108,7 @@ class Section1 extends React.Component {
             CHIAMA ORA
            
           </button>
+          
         </div>
 
         <a href="https://api.whatsapp.com/send?phone=3737477594&text=" target="_blank">
@@ -116,8 +117,8 @@ class Section1 extends React.Component {
   </button>
 </a>
 
-<div className="flex justify-start items-center max-[600px]:min-w-[300px] max-w-lg w-full relative xl:absolute bottom-0 xl:left-[50%] xl:max-w-[550px] 2xl:max-w-[600px]  2xl:left-[55%] "> {/* Utilizziamo una nuova struttura HTML con un wrapper div */}
-          <img
+<div className="flex  justify-start z-10  items-center max-[600px]:min-w-[300px] max-w-lg w-full relative xl:hidden bottom-0 xl:left-[50%] xl:max-w-[550px] 2xl:max-w-[600px]  2xl:left-[55%] "> {/* Utilizziamo una nuova struttura HTML con un wrapper div */}
+          <img 
             src="/images/persone2.png"
             alt="Immagine 1"
             className="w-full  animate-dasinistra" // Rimuoviamo la classe "relative" e il "mt-12"
@@ -517,7 +518,7 @@ class Section8 extends React.Component {
 class App extends React.Component {
   render() {
     return (
-      <div className="flex flex-col bg-slate-50 min-h-screen h-full scroll-smooth overflow-hidden font-body justify-center md:mx-auto">
+      <div className="flex flex-col bg-slate-50 min-h-screen h-full  scroll-smooth overflow-hidden font-body justify-center md:mx-auto">
         <Section1 id="section1" title="La palestra per il tuo " subtitle="Allenati in uno spazio ben attrezzato " />
         <Section3 id="section3" subtitle="Qui, tutti noi ci alleniamo insieme per poter raggiungere gli obiettivi prefissati" />
         <Section4 id="section4" title="Perché affidarsi ad un trainer piuttosto che seguire schede di allenamento su internet?" subtitle="STAFF" />
