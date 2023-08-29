@@ -202,8 +202,12 @@ class Section5 extends React.Component {
     super(props);
     this.state = {
       isScreenLessThan1024px: window.innerWidth < 1024,
+      phoneNumber: '3737477594', 
+      
     };
     this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
+    this.handlePhoneChange = this.handlePhoneChange.bind(this);
+    this.callNow = this.callNow.bind(this);
   }
 
   componentDidMount() {
@@ -218,6 +222,24 @@ class Section5 extends React.Component {
     this.setState({ isScreenLessThan1024px: window.innerWidth < 1024 });
   }
 
+  c
+   
+  
+  
+
+  handlePhoneChange(value) {
+    this.setState({
+      phoneNumber: value,
+    });
+  }
+
+  callNow() {
+    const { phoneNumber } = this.state;
+    if (phoneNumber) {
+      const formattedPhoneNumber = encodeURIComponent(phoneNumber);
+      window.open(`tel:${formattedPhoneNumber}`, '_blank');
+    }
+  }
   render() {
     const isScreenLessThan1024px = window.innerWidth < 1024;
     const CustomArrow = ({ onClick, direction }) => (
@@ -276,7 +298,18 @@ Per questo motivo abbiamo pensato alla promozione<br></br>
         <div className='flex flex-col justify-left items-left relative left-[-.2%] xl:left-0  w-screen mb-10 '>
         <img src="/images/BAN.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[850px] lg:top-[55%] xl:w-[1000px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
 </div>
-        <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold uppercase animate-dasopra">
+<div className=" z-10 relative m-10">
+            <div className="h-[50%] absolute -bottom-[0%] -left-[1%] border border-gray-700 border-t-2 border-l-2 animate-bounce-horizontal-reverse"></div>
+            <div className="w-[15%] absolute -top-[0%] -right-[1%]  border border-gray-700 border-t-2 border-r-2 animate-bounce-horizontal"></div>
+            <div className="w-[15%] absolute -bottom-[0%] -left-[1%] border border-gray-700 border-b-2 border-l-2 animate-bounce-horizontal-reverse"></div>
+            <div className="h-[50%] absolute -top-[0%] -right-[1%] border border-gray-700 border-b-2 border-r-2 animate-bounce-horizontal"></div>
+            <button className=" m-4 bg-red-700  hover:bg-slate-700 text-white hover:scale-105 ease-out duration-150 font-bold text-sm px-5 shadow-lg shadow-black max-w-[190px] h-[70px] md:whitespace-nowrap w-96 border-2 border-black md:max-w-[260px] md:text-base lg:text-lg lg:max-w-[280px] lg:h-20 xl:max-w-sm" onClick={this.callNow}>
+            CHIAMA ORA
+           
+          </button>
+          </div>
+
+        <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-bold uppercase mt-10 animate-dasopra">
           {this.props.subtitle}
         </h2>
 
