@@ -90,7 +90,7 @@ class Section1 extends React.Component {
             </div>
 
             <div className='flex flex-col justify-left items-left relative left-[-.2%] xl:left-0  w-screen  mt-8  xl:ml-[-48px] xl:max-w-[850px] 2xl:max-w-[900px] 2xl:mt-20 '>
-        <img src="/images/BAN.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[750px] lg:top-[50%] xl:w-[750px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
+        <img src="/images/BAN1.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[750px] lg:top-[50%] xl:w-[750px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
 </div>
        
         <div className="flex  mt-12 justify-center lg:justify-start relative mb-20 z-10">
@@ -296,7 +296,7 @@ Per questo motivo abbiamo pensato alla promozione<br></br>
 
         </p>
         <div className='flex flex-col justify-left items-left relative left-[-.2%] xl:left-0  w-screen mb-10 '>
-        <img src="/images/BAN.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[850px] lg:top-[55%] xl:w-[1000px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
+        <img src="/images/BAN1.png" alt="Immagine 1" className="  w-full min-[550px]:top-[45%] sm:top-[50%] md:w-[90%] md:top-[55%] min-[860px]:top-[50%] min-[950px]:top-[45%] lg:w-[850px] lg:top-[55%] xl:w-[1000px] 2xl:w-[1200px]  left-[-.2%] top-[55%] z-10  " />
 </div>
 <div className=" z-10 relative m-10">
             <div className="h-[50%] absolute -bottom-[0%] -left-[1%] border border-gray-700 border-t-2 border-l-2 animate-bounce-horizontal-reverse"></div>
@@ -410,7 +410,7 @@ class Section6 extends React.Component {
         
         Ho sempre dedicato tutta la mia vita al mondo della palestra. Tanto da rendere la mia passione nel mio lavoro.<br></br><br></br>
 
-        Ho partecipato anche a gare di bodybuilding, tra cui mi sono qualificato nella TOP 5 tra i IFBB (International Federation of Bodybuilding & Fitness).<br></br><br></br>
+        Ho partecipato a diverse gare di bodybuilding ottenendo il mio miglior risultato nella mia prima gara come bodybuilder professionista professionista nella IFBB arrivando 5 ( quinto ) davanti a bodybuilder’s di tutto rispetto come Samir Bannout mister Olimpia 1983 Ron Love etc.etc.<br></br><br></br>
 
         Metto tutte le mie conoscenze per aiutarti a raggiungere i tuoi obiettivi. Tu dovrai dare sempre tutto te stesso: costanza, sacrificio e dedizione massima. 
         <br></br>
@@ -530,11 +530,11 @@ class Section8 extends React.Component {
           <div className="flex flex-col  p-4 mt-6">
           <p className="text-white text-[8px] sm:text-xs xl:text-sm te"><span className=' font-semibold'>Orari:</span><br></br></p>
             <p className="text-white text-[8px] sm:text-xs xl:text-sm"><span className=' text-red-700 font-semibold'>Lunedì</span>:<br></br>    9:00 - 22:00</p>
-            <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Martedì</span>:<br></br>   16:30 - 21:30</p>
+            <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Martedì</span>:<br></br>   9:00 - 22:00</p>
             <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Mercoledì</span>:<br></br> 9:00 - 22:00</p>
-            <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Giovedì</span>:<br></br>   16:30 - 21:30</p>
+            <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Giovedì</span>:<br></br>   9:00 - 22:00</p>
             <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Venerdì</span>:<br></br>  9:00 - 22:00</p>
-            <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Sabato</span>:<br></br>   Chiuso</p>
+            <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Sabato</span>:<br></br>   10:00 - 13:00</p>
             <p className="text-white text-[8px] sm:text-xs xl:text-sm"> <span className=' text-red-700 font-semibold'>Domenica</span>:<br></br> Chiuso</p>
           </div>  
         </div><p className='text-white text-center text-[6px] sm:text-[8px] lg:text-xs mt-3 mb-6 relative min-[425px]:left-4'>© Copyright 2023 Overfit Fitness Center. All rights reserved. Powered by SDTCOPYSALES</p>
